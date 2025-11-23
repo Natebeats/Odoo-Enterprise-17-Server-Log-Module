@@ -1,0 +1,42 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_server_log_tree" model="ir.ui.view">
+        <field name="name">server_log.tree</field>
+        <field name="model">server_log</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="location"/>
+                <field name="event_id"/>
+                <field name="start"/>
+                <field name="end"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_server_log_form" model="ir.ui.view">
+        <field name="name">server_log.form</field>
+        <field name="model">server_log</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="location"/>
+                        <field name="event_id" options="{'no_create': False}"/>
+                    </group>
+
+                    <group>
+                        <field name="start"/>
+                        <field name="end"/>
+                        <field name="user_id"/>
+                    </group>
+
+                    <group>
+                        <field name="comment"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+    
+    <!-- Root menu for Server Log -->
+    <menuitem
+        id="server_log_root_menu"
+        name="Server Log"
+        web_icon="server_log,static/description/icon.png"
+        sequence="10"
+    />
+
+    <!-- Submenu for Log Management -->
+    <menuitem
+        id="log_management_menu"
+        name="Log Management"
+        parent="server_log_root_menu"
+        sequence="20"
+    />
+
+    <!-- Submenu for Log Reports -->
+    <menuitem
+        id="log_reports_menu"
+        name="Log Reports"
+        parent="server_log_root_menu"
+        sequence="30"
+    />
+
+    <!-- Action to open list of server logs -->
+    <record id="action_server_log" model="ir.actions.act_window">
+        <field name="name">Server Logs</field>
+        <field name="res_model">server_log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first server log.
+            </p>
+        </field>
+    </record>
+
+    <!-- Bind the action to the Log Management submenu -->
+    <menuitem
+        id="server_log_menuitem"
+        name="Manage Server Logs"
+        parent="log_management_menu"
+        action="action_server_log"
+        sequence="10"
+    />
+</odoo>
